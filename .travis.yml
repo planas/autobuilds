@@ -26,3 +26,12 @@ script:
 branches:
   except:
   - "/^*-v[0-9]/"
+deploy:
+  provider: releases
+  api_key:
+    secure: M37xD26FqlVaKG95cq0/2EDLKmwcFi0g1Deq+XiUgAMgB56WKjFUdKwhzUvqaVSMD8oVqVRGE/HpBSwaIbDBJib5i6WuFu4RaPqHasQ6GFIGlT7y5Mgnd4KYD46TEvSnr04nPrOj+EtPSFnO4kcTtGRLb35VakuBmcTpGonGnjW5NTJMi4h7PL7D0QYGs+FgF4X+9YbenQ8VmjAHxNwbz8xvcAD+bcVGSRbtcdROvgRylweYLk7ULhZBIb8Vwlu1tTJ1hv80W9FsEwb/hQBijCBTfvKjN58p0t7Wjll767IdpH7t47xOeNrPvAt9fNdsSm5uu//D7HSv6C8UPWF7yN/4EbVWhfu/dhceecNe4rd/BNhqBJmyO82107htMURU1A4LyV141+zZudEttvNuzt1UTEWi2vFdx8tcGRAPKuh2QUhPdw70x0PUB8hCC6ffNYzajk4tjem7yEL+MnmWAMNw0gIRdTirfplA6a8rh4jaKC8JOro9tcKIXPj7NliQYFwtINrzWMgwa4pxBnfD1Df3KS1dshGrubLlTRx9UiC7oI7faznLtkbGVHqzx3M3HdA+ExOFlqXhiajIEdramgT0lc9Zur5HcWwobfHjAIMfDBokK6qyMTLgLF4+PeAwMklH5ZFZ1YVGrpRrITi+DFI8hEO6F5ikXRZdSoajbNA=
+  file_glob: true
+  file: buildscripts/build/*.tar.bz2
+  skip_cleanup: true
+  on:
+    repo: planas/autobuilds
